@@ -58,3 +58,24 @@ In about 45 minutes this new cluster will be ready to go!
 
 If you choose an earlier version of OpenShift, you will also have the option to upgrade OpenShift if you like.  This will also take some time.
 
+
+## Application Lifecycle (Application Lifecycle management use case)
+
+
+In the previous lab, you explored the Cluster Lifecycle functionality in RHACM. This allowed you to register/import an OpenShift® cluster to RHACM, which you can now use to deploy applications.
+
+Application Lifecycle functionality in RHACM provides the processes that are used to manage application resources on your managed clusters. This allows you to define a single or multi-cluster application using Kubernetes specifications, but with additional automation of the deployment and lifecycle management of resources to individual clusters. An application designed to run on a single cluster is straightforward and something you ought to be familiar with from working with OpenShift fundamentals. A multi-cluster application allows you to orchestrate the deployment of these same resources to multiple clusters, based on a set of rules you define for which clusters run the application components.
+
+
+The table below describes the different components that the Application Lifecycle model in RHACM is composed of:
+
+
+
+| Resource | Purpose |
+| ---- | ---- |
+| Channel | Defines a place where deployable resources are stored, such as an object store, Kubernetes namespace, Helm repository, or GitHub repository |
+| Subscription | Definitions that identify deployable resources available in a Channel resource that are to be deployed to a target cluster |
+| Placement | Defines the target clusters where subscriptions deploy and maintain the application. It is composed of Kubernetes resources identified by the Subscription resource and pulled from the location defined in the Channel resource. |
+| Application | A way to group the components here into a more easily viewable single resource. An Application resource typically references a Subscription resource. |
+
+
