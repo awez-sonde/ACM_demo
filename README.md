@@ -94,34 +94,36 @@ This may seem like a lot of extra resources to manage in addition to the deploya
 - In RHACM, navigate to Applications click Create application and select Subscription. 
 - Enter the following information:
   Next to Create application, make sure the YAML dial is ON
-   ```
-   Name: book-import 
-   Namespace: book-import 
-   ```
+```
+Name: book-import
+Namespace: book-import 
+```
 
-Under Repository location for resources, select the GIT repository
+- Under Repository location for resources, select the GIT repository
 ```
 URL:  https://github.com/hichammourad/book-import.git
 Branch:  master-no-pre-post
 Path:  book-import
 ```
 
-Under the Select clusters for application deployment, select Deploy application resources on clusters with all specified labels
+- Under the Select clusters for application deployment, select Deploy application resources on clusters with all specified labels
 ```
 Cluster sets: global
 Label: environment
 Value: dev
 ```
 
-Click Create and after a few minutes you will see the application and all its components available in RHACM.
+- Click Create and after a few minutes you will see the application and all its components available in RHACM.
 
-If everything was done correctly you should be able to see the application deployed to local-cluster. Go to Applications, and make sure to filter by subscription as the image below:
+If everything was done correctly you should be able to see the application deployed to local-cluster. Go to Applications, and make sure to filter by subscription 
 
-This will show only the apps deployed from ACM, instead of all the existing apps in the managed clusters. Click on the book-import application and have a look at the topology view
+This will show only the apps deployed from ACM, instead of all the existing apps in the managed clusters. 
 
-Select the Route and click on the URL provided, you should see the Book Import application
+- Click on the book-import application and have a look at the topology view
 
-See the Book Import user interface.
+- Select the Route and click on the URL provided, you should see the Book Import application
+
+- See the Book Import user interface.
 
 Feel free to experiment with the application.  Edit it and change the label to environment=prod.  What happens to the application?
 
