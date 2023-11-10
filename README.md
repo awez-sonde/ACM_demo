@@ -48,7 +48,9 @@ Please refer to [Creating a cloud connection for Amazon Web Services](https://ac
 | If you provisioned your ACM Hub cluster in NORTH AMERICA | Select us-west-1 or us-west-2 |
 | -------------------------------------------------------- | ------------------------------|
 | If you provisioned your ACM Hub cluster in EUROPE / EMEA | Select eu-west-2 or eu-west-3 |
+| -------------------------------------------------------- | ----- |
 | If you provisioned your ACM Hub cluster in ASIA PACIFIC | Select ap-southeast-2 or ap-northeast-2 or ap-east-1 |
+| ----- | ----- |
 
 ---
 **NOTE**
