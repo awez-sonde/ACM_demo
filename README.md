@@ -58,3 +58,9 @@ Please note that the deployment might still fail, if so please retry at differen
 
 ---
 
+Leave everything else as is(default) and then click NEXT on the other screens or select 7 - Review and create on the menu and then click CREATE 
+
+In about 45 minutes this new cluster will be ready to go!  
+
+If you choose an earlier version of OpenShift, you will also have the option to upgrade OpenShift if you like.  This will also take some time.
+
