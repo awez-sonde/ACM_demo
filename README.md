@@ -32,3 +32,27 @@ You will need to provide connection details
 Verify the information and click ADD
 
 Please refer to [Creating a cloud connection for Amazon Web Services](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.3/html/credentials/credentials#aws_cred_create)   for more information on how to complete the step.
+
+
+### Create a new OpenShift cluster in AWS
+
+- From the Clusters page, select Create Cluster
+- Select Amazon Web services and then Standalone.
+- Select the Infrastructure provider credential: aws (may be already selected)
+- Name: cluster1 
+- Leave the Cluster set empty for now 
+- Select a Release Image, chose a 4.13 version
+- Add a label of environment=prod. Click NEXT
+- Change the region to *see table below*
+
+| If you provisioned your ACM Hub cluster in NORTH AMERICA | Select us-west-1 or us-west-2 |
+| If you provisioned your ACM Hub cluster in EUROPE / EMEA | Select eu-west-2 or eu-west-3 |
+| If you provisioned your ACM Hub cluster in ASIA PACIFIC | Select ap-southeast-2 or ap-northeast-2 or ap-east-1 |
+
+---
+**NOTE**
+
+Please note that the deployment might still fail, if so please retry at different availability zone, we have very limited amount of elastic IP addresses in these accounts.
+
+---
+
