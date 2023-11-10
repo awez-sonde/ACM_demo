@@ -31,4 +31,4 @@ You will need to provide connection details
 
 Verify the information and click ADD
 
-Please refer to Creating a cloud connection[https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.3/html/credentials/credentials#aws_cred_create]  for Amazon Web Services for more information on how to complete the step.
+Please refer to [Creating a cloud connection](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.3/html/credentials/credentials#aws_cred_create)  for Amazon Web Services for more information on how to complete the step.
