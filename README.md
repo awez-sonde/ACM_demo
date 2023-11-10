@@ -25,7 +25,7 @@ Click NEXT
 Access Key ID:  your-access-id
 Secret Access Key ID: your-secret-id
 Click NEXT - We don’t need to configure a Proxy
-Red Hat OpenShift pull secret:  Get from your [Red Hat login]https://cloud.redhat.com/openshift/install/pull-secret
+Red Hat OpenShift pull secret:  Get from your [Red Hat login](https://cloud.redhat.com/openshift/install/pull-secret)
 SSH private and public keys:  Use an existing key pair or generate a new one (see link below) 
 Click NEXT
 
