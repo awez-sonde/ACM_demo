@@ -303,7 +303,9 @@ spec:
 
 
 - Apply the observability YAML to your cluster by running the following command:
-  `oc apply -f multiclusterobservability_cr.yaml`
+  ```
+  oc apply -f multiclusterobservability_cr.yaml
+  ```
 
 - Log in to the ACM console, and navigate to Observe environments -> Overview.
 - Click on the Grafana link in the top right to view the metrics from the managed clusters.  Please note: it will take a few minutes for the metrics to become visible on the dashboard.
