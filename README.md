@@ -203,9 +203,17 @@ Please note that initially, it will complain that there is an issue with the pol
 You can also play around by creating more policies if needed, we have some examples in the [Collection of policy examples for Open Cluster Management](https://github.com/open-cluster-management/policy-collection)
 
 
+### Bonus exercise
 
+Lets monitor openshift-authentication certificate 
 
+- Extract the authentication serving cert and check the validity using the below command from the Bastion host
+  ```
+  oc extract secret/v4-0-config-system-serving-cert -n openshift-authentication --confirm && openssl x509 -in tls.crt -noout -text  | grep -iE "not after"
+  ```
+- Calculate the number of hours till the date that we got in the previous step.You can do it from [here](https://www.timeanddate.com/date/duration.html?y1=2023&m1=11&d1=11&y2=2025&m2=11&d2=9)
 
+- Use a higher number as a MinimumDuration in our policy templates.Dont forget to add openshift-authentication in the clusterset binding and in the policy templates.
 
 
 
