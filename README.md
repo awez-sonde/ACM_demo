@@ -306,9 +306,13 @@ spec:
   ```
   oc apply -f multiclusterobservability_cr.yaml
   ```
-
-- Log in to the ACM console, and navigate to Observe environments -> Overview.
+- Wait for the observability pods to start
+  ```
+  watch oc get pods -n open-cluster-management-observability
+  ```
+- Once all the pods are up log in to the ACM console, and Infrastructure 
 - Click on the Grafana link in the top right to view the metrics from the managed clusters.  Please note: it will take a few minutes for the metrics to become visible on the dashboard.
+- On the right top corner explore the Dashboards on Grafana.
 
 Would you like to do more with Grafana?  Please visit [this page](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.7/html/observability/index)
 
