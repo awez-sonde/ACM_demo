@@ -164,14 +164,14 @@ This table describes the three types of policy controllers available in RHACM al
 | Policy Controller | Purpose | Enforce/Inform |
 | ----- | ----- | ----- |
 | Configuration | Used to configure any Kubernetes resource across your clusters. Where these resources are created or configured is determined by the namespaces you include (or exclude) in the policy | Both |
-| Certificate | Used to detect certificates that are close to expiring. You can configure the certificate policy controller by updating the minimum duration parameter in your controller policy. When a certificate expires in less than the minimum duration, the policy becomes noncompliant. Certificates are identified from secrets in the included namespaces. | Inform |
+| Certificate | Used to detect certificates that are close to expiring. You can configure the certificate policy controller by updating the minimum duration parameter in your controller policy. When a certificate expires in less than the minimum duration, the policy becomes non-compliant. Certificates are identified from secrets in the included namespaces. | Inform |
 | Identity and Access Management (IAM) | The IAM policy controller monitors for the desired maximum number of users with a particular cluster role (i.e. ClusterRole) in your cluster. | Inform |
 
 You need to create three different resources in order to implement the policy controllers:
 
 | Resource | Function |
 | ----- | ----- |
-| Policy | The Policy defines what you actually want to check and possibly configure (with enforce). Policies include a policy-template which defines a list of objectDefinitions. The policy also determines the namespaces it is applied to, as well as the remediation actions it takes. |
+| Policy | The Policy defines what you actually want to check and possibly configure (with enforce). Policies include a policy-template that defines a list of objectDefinitions. The policy also determines the namespaces it is applied to, as well as the remediation actions it takes. |
 | PlacementRule | Identifies a list of managed clusters that are targeted when using this PlacementRule. |
 | Placement Binding | Connect the policy to the PlacementRule. |
 
@@ -183,20 +183,22 @@ For this, we’ll need a little setup:
 - Click on the 3-dots button on the right, and then on Edit namespaces bindings and add the default namespace.
 - Navigate to the Governance screen and click create policy.
 - Build a policy with the following information:
-  - Name: policy-grc-cert
-  - Namespace: default
+  ```
+  Name: policy-grc-cert
+  Namespace: default
+  ```
 - Click NEXT.
 - Policy Templates: Click on Add policy template and select Certificate Management expiration.
 - Click NEXT.
-- On Placement, click on New placement.
+- On Placement, click on New Placement.
 - Select global as the clusterSet.
 - Leave everything else as default and click NEXT.
 
-As you can see in the Review page, this policy will be applied to every cluster in the global ClusterSet, and it will look for expired certificates in them. If there’s a certificate that is set to expire in less time than the minimumDuration specification, the policy will inform a not compliant status.
+As you can see on the Review page, this policy will be applied to every cluster in the global ClusterSet, and it will look for expired certificates in them. If there’s a certificate that is set to expire in less time than the minimumDuration specification, the policy will inform a non-compliant status.
 
 - Click SUBMIT.
 
-Please note that initially it will complain that there is an issue with the policy but shortly after should go green and get a checkmark.
+Please note that initially, it will complain that there is an issue with the policy but shortly after should go green and get a checkmark.
 
 You can also play around by creating more policies if needed, we have some examples in the [Collection of policy examples for Open Cluster Management](https://github.com/open-cluster-management/policy-collection)
 
