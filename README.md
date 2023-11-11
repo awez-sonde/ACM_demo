@@ -18,18 +18,18 @@ Its time to use your  AWS credentials, Access Key ID, Secret Access Key, and the
 
 You will need to provide connection details
 ```
-- Credential Type: Choose Amazon Web Services and then, Amazon Web Services again
-- Credential Name:  aws
-- Namespace: open-cluster-management
-- Base DNS Domain:  your_base_dn
-- Click NEXT
-- Access Key ID:  your-access-id
-- Secret Access Key ID: your-secret-id
-- Click NEXT - We don’t need to configure a Proxy
-- Red Hat OpenShift pull secret:  Get from your [Red Hat login](https://cloud.redhat.com/openshift/install/pull-secret)
-- SSH private and public keys:  Use an existing key pair or generate a new one (see link below) 
-- Click NEXT
-- Verify the information and click ADD
+ Credential Type: Choose Amazon Web Services and then, Amazon Web Services again
+ Credential Name:  aws
+ Namespace: open-cluster-management
+ Base DNS Domain:  your_base_dn
+ Click NEXT
+ Access Key ID:  your-access-id
+ Secret Access Key ID: your-secret-id
+ Click NEXT - We don’t need to configure a Proxy
+ Red Hat OpenShift pull secret:  Get from your [Red Hat login](https://cloud.redhat.com/openshift/install/pull-secret)
+ SSH private and public keys:  Use an existing key pair or generate a new one (see link below) 
+ Click NEXT
+ Verify the information and click ADD
 ```
 
 Please refer to [Creating a cloud connection for Amazon Web Services](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.3/html/credentials/credentials#aws_cred_create)   for more information on how to complete the step.
