@@ -161,6 +161,7 @@ This table describes the three types of policy controllers available in RHACM al
 You need to create three different resources in order to implement the policy controllers:
 
 | Resource | Function |
+| ----- | ----- |
 | Policy | The Policy defines what you actually want to check and possibly configure (with enforce). Policies include a policy-template which defines a list of objectDefinitions. The policy also determines the namespaces it is applied to, as well as the remediation actions it takes. |
 | PlacementRule | Identifies a list of managed clusters that are targeted when using this PlacementRule. |
 | Placement Binding | Connect the policy to the PlacementRule. |
