@@ -226,10 +226,15 @@ SSH information to your bastion host.
 
 ### Create the S3 bucket
 - Login to the bastion host.
-- Run the following command to login to AWS:
+- Run the following command to log in to AWS:
   ```
-   aws configure  and enter your AWS keys when prompted.  Default region: us-east-2
+   aws configure  
   ```
+  and enter your AWS keys when prompted.
+```
+  Default region: us-east-2
+  Default output format : [None}
+```
 - Then run the following command to create the S3 bucket:
    ```
    aws s3 mb s3://grafana-$GUID
