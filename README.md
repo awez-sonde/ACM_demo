@@ -240,15 +240,18 @@ SSH information to your bastion host.
 ### Integrate Grafana into ACM
 
 - Login to the bastion host host.
-- Create a namespace by running the following command:  `oc create namespace open-cluster-management-observability`
+- Create a namespace by running the following command: 
+```
+oc create namespace open-cluster-management-observability
+```
 - Copy the pull secret into this new namespace by running the following TWO commands:  
-   ```
-   DOCKER_CONFIG_JSON=`oc extract secret/pull-secret -n openshift-config --to=-` 
+```
+DOCKER_CONFIG_JSON=`oc extract secret/pull-secret -n openshift-config --to=-` 
 
 
 
-   oc create secret generic multiclusterhub-operator-pull-secret -n open-cluster-management-observability --from-literal=.dockerconfigjson="$DOCKER_CONFIG_JSON" -- type=kubernetes.io/dockerconfigjson
-   ```
+oc create secret generic multiclusterhub-operator-pull-secret -n open-cluster-management-observability --from-literal=.dockerconfigjson="$DOCKER_CONFIG_JSON" -- type=kubernetes.io/dockerconfigjson
+```
 - In your current folder create a file called thanos-object-storage.yaml  and add the following text in the file. Please be sure to update your S3 bucket name and AWS Keys
 
 ```
@@ -270,8 +273,9 @@ stringData:
 ```
 
 - Create a secret for your object storage by running the following command:
-`oc create -f thanos-object-storage.yaml -n open-cluster-management-observability`
-
+```
+oc create -f thanos-object-storage.yaml -n open-cluster-management-observability
+```
 - Create the MultiClusterObservability custom resource for your managed clusters.  To do this create a  YAML file named multiclusterobservability_cr.yaml
 
 ```
@@ -286,9 +290,9 @@ spec:
       key: thanos.yaml
       name: thanos-object-storage
 ```
-```
-Note: This is the default operation. There are multiple other optional fields to customize this resource. If you want to change optional parameters like retentionResolution, storageClass to use, etc., please check the API reference.
-```
+---
+**Note** This is the default operation. There are multiple other optional fields to customize this resource. If you want to change optional parameters like retentionResolution, storageClass to use, etc., please check the API reference.
+---
 
 
 - Apply the observability YAML to your cluster by running the following command:
