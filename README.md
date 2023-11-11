@@ -291,7 +291,9 @@ spec:
       name: thanos-object-storage
 ```
 ---
-**Note** This is the default operation. There are multiple other optional fields to customize this resource. If you want to change optional parameters like retentionResolution, storageClass to use, etc., please check the API reference.
+
+**Note**: This is the default operation. There are multiple other optional fields to customize this resource. If you want to change optional parameters like retentionResolution, storageClass to use, etc., please check the API reference.
+
 ---
 
 
