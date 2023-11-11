@@ -180,7 +180,7 @@ We’ll go through a simple example, and create a policy in the default namespac
 For this, we’ll need a little setup:
 
 - Navigate to Clusters and access the ClusterSets tab.
-- Click on the 3-dots button on the right, and then on Edit namespaces bindings and add the default namespace.
+- Click on the 3-dots button on the right on the global cluster set, and then on Edit namespaces bindings and add the default namespace.
 - Navigate to the Governance screen and click create policy.
 - Build a policy with the following information:
   ```
