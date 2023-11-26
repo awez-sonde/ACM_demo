@@ -2,15 +2,15 @@
 
 ## RHACM/OpenShift Access Information
 
-OpenShift Console URL : 
-Username : 
-Password: 
+- OpenShift Console URL : 
+- Username : 
+- Password: 
 
 ## AWS Access Information
 
-Access Key ID :
-Secret Access Key :
-Base DNS Domain : 
+- Access Key ID :
+- Secret Access Key :
+- Base DNS Domain : 
 
 
 
