@@ -2,9 +2,9 @@
 
 ## RHACM/OpenShift Access Information
 
-- OpenShift Console URL : 
-- Username : 
-- Password: 
+### OpenShift Console URL : 
+### Username : 
+### Password: 
 
 ## AWS Access Information
 
