@@ -2,9 +2,9 @@
 
 ## RHACM/OpenShift Access Information
 
-### OpenShift Console URL : 
-### Username : 
-### Password: 
+### OpenShift Console URL : https://console-openshift-console.apps.cluster-mw9hn.mw9hn.sandbox2538.opentlc.com
+### Username : admin
+### Password: cK8Pg7pz4CajXaDr
 
 ## AWS Access Information
 
