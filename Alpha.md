@@ -4,11 +4,11 @@
 
 ### OpenShift Console URL : https://console-openshift-console.apps.cluster-mw9hn.mw9hn.sandbox2538.opentlc.com
 ### Username : admin
-### Password: cK8Pg7pz4CajXaDr
+### Password: EZmjM5gBzAyWSKzo
 
 ## AWS Access Information
 
-### Access Key ID :
+### Access Key ID :                      
 ### Secret Access Key :
 ### Base DNS Domain : 
 
