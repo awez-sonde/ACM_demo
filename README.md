@@ -318,4 +318,36 @@ Would you like to do more with Grafana?  Please visit [this page](https://access
 
 
 
+## RHACM and GitOps
+You can integrate the OpenShift GitOps Operator with Advanced Cluster Management for Kubernetes which provides advanced features compared to the Application and Subscription model offered by RHACM itself.
+OpenShift GitOps is the downstream project for ArgoCD, and it benefits all the latest features and enhancements whilst receiving support from the OpenShift GitOps subscription.
+### Installing GitOps Operator
+As a prerequiste, you must install the GitOps Operator on the Hub Cluster, so head to the Local Cluster console, in the Operators->OperatorHub section, and search for "Red Hat OpenShift GitOps". Click on "Install", leave everything as default and click again on "Install", and wait for the installation to finish.
+Once installed, we will have our ArgoCD instance created in the "openshift-gitops" namespace.
+### Configuring Managed Cluster into GitOps
+Next we need to create the necessary resources to enabled ArgoCD to interact with our Managed Clusters.
+From ACM Console, go to "Applications" then "Create" and select "ApplicationSet". You'll be prompted with a few fields to fill out, let's focus on the "Argo server" field. Click on it and then click on "Add Argo Server".
+This will allow us to register our Managed Clusters inside the ArgoCD instance, by creating these 3 resources:
+ - Placement resource: References our ManagedClusterSet
+ - GitOpsCluster resource: Creates the "cluster" object inside our ArgoCD instance, based on the Placement resource
+ - ManagedClusterSetBinding resource: Allows our openshit-gitops namespace to interact with the ManagedClusters in a specified ManagedClusterSet
 
+Fill in the requested fields, and observe the above resources getting populated by toggling the "View Yaml" switch.
+
+### Creating our demo app with GitOps
+Now that we have our Managed Clusters registered into our ArgoCD instance, it's time to deploy our demo app on those.
+Let's fill in the "name" fields, to provide a recognizable name for our application, any name will do.
+Hit next, and you will be prompted with 2 choices: "Git" and "Helm", we will be using "Git" so click on it and fill in the fields as follows:
+- URL: `https://github.com/agiorgirh/gitops-demoapp.git`
+- Revision: `master`
+- Path: `manifests`
+- Remote namespace: `demoapp`
+
+Click on next, you will be prompted with a few checkboxes that will configure the syncing and reconciliation mechanism for our application. We will leave everything as default here, and click next.
+On this page we will define where our application will be deployed, indeed you will be prompted with "New Placement" or "Existing Placement". Go ahead and create a new placement rule to have it deployed on the "Prod" cluster only.
+After you hit next again, you will see a review page, and a "Submit" button in the bottom. Go ahead and click it.
+
+We have now deployed our demo app, which you can check out by navigating to "Applications", filter for "Application set" and you will see the app you just created.
+If you click on it, you will get an Overview about the resources status, the last time it synced etc... Now go to the "Topology" tab, where you will be able to see your application resources getting created on the target cluster. If you click on the "Route" resources, and on the "Launch Route URL" you should be greeted with a Tetris-like webgame. 
+
+Congrats, you deployed your app using GitOps on ACM!
